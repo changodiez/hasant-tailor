@@ -20,14 +20,14 @@ app.use(express.static(path.join(__dirname, "client/build")))
 
 // //*Just to check we're online */
 app.get("/", (req, res) => {
-  res.status(200).send('Hello World, Welcome to my blog!');
+  res.status(200).send('Hello World!');
 });
 
 //* Product Route *//
 app.use("/products", require("./routes/products"));
 
 //* Authenticaion Route*//
-// app.use("/auth", require("./routes/auth"));
+app.use("/auth", require("./routes/auth"));
 
 /*TODO*/
 
