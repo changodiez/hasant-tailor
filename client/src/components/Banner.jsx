@@ -4,7 +4,6 @@ import React from 'react';
 const Banner = () => {
 let randomNumber = Math.floor(Math.random()*10)
 let backgroundImageLink = `url(../../src/Assets/${randomNumber}.jpeg)`
-console.log (backgroundImageLink)
 
     return ( 
         <div className="banner" >

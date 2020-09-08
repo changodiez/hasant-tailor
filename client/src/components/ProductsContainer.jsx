@@ -16,12 +16,16 @@ const ProductsContainer = () => {
     } else {
       fetchLink = "/products";
     }
+    console.log (fetchLink)
     fetch(fetchLink)
       .then((res) => res.json())
       .then((json) => {
         setProductsData(json);
+        
       });
   }, []);
+
+
 
   return (
     <div>

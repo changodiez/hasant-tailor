@@ -11,8 +11,7 @@ import ProductsCategory from "./components/ProductsCategory";
 
 function App() {
   console.log (process.env.NODE_ENV, "NODE_ENV")
-  console.log (process.env.USER, "user")
-  console.log (process.env.DATABASE_URL, "dbase")
+
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const setAuth = (boolean) => {
