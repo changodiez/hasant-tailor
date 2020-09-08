@@ -10,6 +10,9 @@ import Banner from "./components/Banner";
 import ProductsCategory from "./components/ProductsCategory";
 
 function App() {
+  console.log (process.env.PORT, "port")
+  console.log (process.env.PG_USER, "user")
+  console.log (process.env.PG_DATABASE, "base")
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const setAuth = (boolean) => {
