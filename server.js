@@ -15,8 +15,7 @@ app.use(morgan("tiny"));
 
 app.use(express.static(path.join(__dirname, "client/build")))
 
-if (process.env.NODE_ENV === "production"){
- }
+
 //ROUTES
 
 // //*Just to check we're online */
@@ -28,7 +27,7 @@ app.get("/", (req, res) => {
 app.use("/products", require("./routes/products"));
 
 //* Authenticaion Route*//
-app.use("/auth", require("./routes/auth"));
+// app.use("/auth", require("./routes/auth"));
 
 /*TODO*/
 
