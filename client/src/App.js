@@ -10,8 +10,6 @@ import Banner from "./components/Banner";
 import ProductsCategory from "./components/ProductsCategory";
 
 function App() {
-  console.log (process.env.NODE_ENV, "NODE_ENV")
-
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const setAuth = (boolean) => {

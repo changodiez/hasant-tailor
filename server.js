@@ -19,12 +19,11 @@ if (process.env.NODE_ENV === "production") {
 }
 
 
-
 //ROUTES
 
 // //*Just to check we're online */
 app.get("/", (req, res) => {
-  res.status(200).send('Hello World!');
+  res.status(200).send(`Houston, we're online`);
 });
 
 //* Product Route *//
