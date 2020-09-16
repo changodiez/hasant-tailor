@@ -5,10 +5,12 @@ const Register = (props) => {
     username:"",
     email: "",
     password: "",
+    registrationSuccessful: "",
+    registrationError: "",
   });
 
   //Managing register form
-  const { username, email, password } = inputs; // <- This is just to use these variables without having to write inputs.email and inputs.password everytime
+  const { username, email, password, registrationError, registrationSuccessful } = inputs; // <- This is just to use these variables without having to write inputs.email and inputs.password everytime
   const onChange = (e) => {
     setInputs({ ...inputs, [e.target.name]: e.target.value });
   };
@@ -25,7 +27,18 @@ const Register = (props) => {
       });
 
       const parseRes = await response.json();
-      console.log(parseRes);
+      if (response.ok) {
+        setInputs({
+          ...inputs,
+          registrationSuccessful: parseRes,
+          registrationError: "",
+        });
+        setTimeout(() => {
+          window.location.href = "/";
+        }, 2000);
+      } else {
+        setInputs({ ...inputs, registrationError: parseRes });
+      }
     } catch (error) {
       console.error(error.message);
     }
@@ -51,7 +64,7 @@ const Register = (props) => {
             <form onSubmit={onSubmit}>
               <h2>Create an account</h2>
               <p>Already have an account? Sign In</p>
-
+              
               <p>Enter your name</p>
 
               <input
@@ -62,6 +75,7 @@ const Register = (props) => {
                 value={username}
                 onChange={(e) => onChange(e)}
               ></input>
+
               <p>Enter your email</p>
 
               <input
@@ -81,6 +95,18 @@ const Register = (props) => {
                 value={password}
                 onChange={(e) => onChange(e)}
               ></input>
+              <p
+                className="error-message"
+                style={{ display: registrationError ? "block" : "none" }}
+              >
+                {registrationError}
+              </p>
+              <p
+                className="success-message"
+                style={{ display: registrationSuccessful ? "block" : "none" }}
+              >
+                {registrationSuccessful}
+              </p>
               <button type="submit">Register</button>
               <p>
                 By providing your email address, you agree to our Privacy Policy
