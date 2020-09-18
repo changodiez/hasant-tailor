@@ -12,9 +12,9 @@ const Footer = () => {
       </div>
       <div className="footer-social">
       <ul>
-        <li><a href="https://www.instagram.com/migracodebarcelona/">Instagram</a></li>
-        <li><a href="https://www.facebook.com/migracode">Facebook</a></li>
-        <li><a href="https://www.youtube.com/channel/UCfNlQG6jDz-d8tWKf6X5Gkg">Youtube</a></li>
+        <li>Instagram</li>
+        <li>Facebook</li>
+        <li>Youtube</li>
       </ul>
 </div>
         <p>Copyright ©2020
