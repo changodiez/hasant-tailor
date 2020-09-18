@@ -21,7 +21,7 @@ const Login = (props) => {
 
     try {
       const body = { email, password };
-      const response = await fetch("/auth/login", {
+      const response = await fetch("http://localhost:4000/auth/login", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(body),
@@ -55,9 +55,10 @@ const Login = (props) => {
     Close(!LoginOpen);
   };
 
+
   return (
     <div>
-      <div className="modal">
+      <div className="modal" >
         <div className="Login-modal">
           <button id="LoginbuttonClose" onClick={CloseLogin}>
             X

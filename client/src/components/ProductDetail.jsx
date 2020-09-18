@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 const ProductDetail = () => {
   
-  let {id}  = useParams();
+// eslint-disable-next-line
+let {id}  = useParams();
+ 
   const [product, setProducts] = useState();
 
   useEffect(() => {
-    fetch(`/products/${id}`)
+    fetch(`http://localhost:4000/products/${id}`)
       .then((res) => res.json())
       .then((json) => {
         setProducts(json[0]);
