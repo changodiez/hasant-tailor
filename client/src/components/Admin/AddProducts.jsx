@@ -21,7 +21,7 @@ const AddProducts = (props) => {
     const body = { product_name, category, price, image, description };
     
     try {
-      const response = await fetch("http://localhost:4000/admin/products/add", {
+      const response = await fetch("/admin/products/add", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(body),

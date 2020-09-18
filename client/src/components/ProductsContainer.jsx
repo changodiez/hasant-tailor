@@ -10,7 +10,7 @@ const ProductsContainer = (props) => {
   
   useEffect(() => {
 
-      const fetchLink = `http://localhost:4000/products?name=${searchValue}`
+      const fetchLink = `/products?name=${searchValue}`
 
       fetch(fetchLink)
         .then((res) => res.json())

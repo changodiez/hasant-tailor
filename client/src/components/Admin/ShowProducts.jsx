@@ -13,7 +13,7 @@ const ShowProducts = (props) => {
     if (respuesta) {
       try {
         const response = await fetch(
-          `http://localhost:4000/admin/products/${id}`,
+          `/admin/products/${id}`,
           {
             method: "DELETE",
           }

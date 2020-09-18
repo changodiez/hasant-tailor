@@ -11,7 +11,7 @@ const ProductsAdmin = () => {
   const [productsData, setProductsData] = useState([]);
 
   useEffect(() => {
-    const fetchLink = `http://localhost:4000/admin/products`;
+    const fetchLink = `/admin/products`;
 
     fetch(fetchLink)
       .then((res) => res.json())

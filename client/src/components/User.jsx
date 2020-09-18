@@ -19,7 +19,7 @@ const User = () => {
   
     const checkAuthentication = async () => {
       try {
-        const res = await fetch("http://localhost:4000/auth/verify", {
+        const res = await fetch("/auth/verify", {
           method: "POST",
           headers: { token: localStorage.token },
         });
