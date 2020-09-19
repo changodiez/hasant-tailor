@@ -14,7 +14,7 @@ function App() {
     <BrowserRouter>
       <Fragment>
         <Route path="/" exact={true} render={() => <User />} />
-        <Route path="/admin"  render={() => <Admin />} />
+        <Route path="/admin" exact render={() => <Admin />} />
       </Fragment>
     </BrowserRouter>
   );

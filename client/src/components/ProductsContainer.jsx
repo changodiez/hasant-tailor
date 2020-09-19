@@ -14,10 +14,13 @@ const ProductsContainer = (props) => {
 
       fetch(fetchLink)
         .then((res) => res.json())
+        
         .then((json) => {
           setProductsData(json);
         });
   }, [searchValue]);
+
+  console.log(productsData)
 
   return (
     <div>

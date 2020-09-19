@@ -1,22 +1,22 @@
-import React, { Fragment } from "react";
+// import React, { Fragment } from "react";
 
-const AddRows = (props) => {
-  const rows = props.valor;
+// const AddRows = (props) => {
+//   const rows = props.valor;
 
-  return (
-    <Fragment>
-      {/* <div className="col">
-      <input
-                type="text"
-                placeholder={rows}
-                name={rows}
-                required
-                value={rows}
-                onChange={(e) => onChange(e)}
-              ></input>
-      </div> */}
-    </Fragment>
-  );
-};
+//   return (
+//     <Fragment>
+//       <div className="col">
+//       <input
+//                 type="text"
+//                 placeholder={rows}
+//                 name={rows}
+//                 required
+//                 value={rows}
+//                 onChange={(e) => onChange(e)}
+//               ></input>
+//       </div>
+//     </Fragment>
+//   );
+// };
 
-export default AddRows;
+// export default AddRows;
