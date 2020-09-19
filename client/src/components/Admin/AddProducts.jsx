@@ -31,6 +31,13 @@ const AddProducts = (props) => {
       console.error(error);
     }
     props.refresh(true);
+    setInputs({
+      product_name: "",
+      category: "",
+      price: "",
+      image: "",
+      description: "",
+    })
   };
 
   return (

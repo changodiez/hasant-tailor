@@ -23,7 +23,7 @@ const ShowProducts = (props) => {
       } catch (error) {
         console.error(error);
       }
-      props.refresh(true);
+      props.refresh(Math.random());
     }
   };
 

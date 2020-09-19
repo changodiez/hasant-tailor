@@ -53,7 +53,7 @@ function App() {
     <Router>
       <Route path="/owner" exact={true} component={Admin} />
       <NavBar
-        auth={isAuthenticated}
+        isAuthenticated={isAuthenticated}
         setAuth={setAuth}
         setSearchValue={setSearchValue}
       />

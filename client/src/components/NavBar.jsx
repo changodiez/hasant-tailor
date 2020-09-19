@@ -24,7 +24,7 @@ const setSearchValue = props.setSearchValue
     }, [size]);
   
     window.addEventListener("resize", showMovile);
-    console.log(window.location.search)
+
 
     return ( 
         <Fragment >
