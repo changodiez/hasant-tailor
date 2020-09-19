@@ -21,12 +21,14 @@ const setSearchValue = props.setSearchValue
     const size = window.addEventListener("resize", showMovile);
     useEffect(() => {
       showMovile();
-      console.log(setSearchValue)
     }, [size]);
   
     window.addEventListener("resize", showMovile);
+    console.log(window.location.search)
+
     return ( 
-        <Fragment>
+        <Fragment >
+          
             {isMovile ? (
           <NavigationBarMovile
             auth={isAuthenticated}

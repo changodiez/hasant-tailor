@@ -43,36 +43,36 @@ const User = () => {
     setSearchValue("");
   }, []);
 
-
   return (
     <BrowserRouter>
-    
-     
-      <NavBar auth={isAuthenticated}
-            setAuth={setAuth}
-            setSearchValue={setSearchValue}/> 
+      <Route path="/admin" exact={true} render={() => <Admin />} />
 
-        <Switch>
-          <Route
-            path="/"
-            exact={true}
-            render={(props) => (
-              <div>
-                <Banner />
-                <ProductsCategory {...props} choseCategory={setSearchValue} />
-              </div>
-            )}
-          />
-          <Route path="/product/:id" render={() => <ProductDetail />} />
-          <Route
-            path="/products"
-            render={(props) => (
-              <ProductsContainer {...props} searchValue={search} />
-            )}
-          />
-        </Switch>
-        <Footer />
-        <Route path="/admin" exact={true} render={() => <Admin/>} />
+      <NavBar
+        auth={isAuthenticated}
+        setAuth={setAuth}
+        setSearchValue={setSearchValue}
+      />
+
+      <Switch>
+        <Route
+          path="/"
+          exact={true}
+          render={(props) => (
+            <div>
+              <Banner />
+              <ProductsCategory {...props} choseCategory={setSearchValue} />
+            </div>
+          )}
+        />
+        <Route path="/product/:id" render={() => <ProductDetail />} />
+        <Route
+          path="/products"
+          render={(props) => (
+            <ProductsContainer {...props} searchValue={search} />
+          )}
+        />
+      </Switch>
+      <Footer />
     </BrowserRouter>
   );
 };

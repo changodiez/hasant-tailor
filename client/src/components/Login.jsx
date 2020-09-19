@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
+
 
 const Login = (props) => {
   const [inputs, setInputs] = useState({
@@ -24,7 +24,12 @@ const Login = (props) => {
 
     if (email === "admin@admin.com" && password === "admin"){
       alert("Welcome Admin")
+
       
+      setTimeout(() => {
+        window.location.href = "/admin";
+      }, 1000);
+     
 
     } else {
 
