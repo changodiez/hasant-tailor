@@ -12,12 +12,7 @@ import Admin from "./components/Admin/Admin";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route path="/" exact={true} render={() => <User />} />
-        <Route path="/admin"  exact={true} render={() => <Admin />} />
-        </Switch>
-    </BrowserRouter>
+    <User/>
   );
 }
 
