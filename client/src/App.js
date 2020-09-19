@@ -2,7 +2,8 @@ import React, { Fragment } from "react";
 import {
   BrowserRouter,
   
-  Route
+  Route,
+  Switch
 } from "react-router-dom";
 import "./App.css";
 
@@ -12,10 +13,10 @@ import Admin from "./components/Admin/Admin";
 function App() {
   return (
     <BrowserRouter>
-      <Fragment>
+      <Switch>
         <Route path="/" exact={true} render={() => <User />} />
-        <Route path="/admin" exact render={() => <Admin />} />
-      </Fragment>
+        <Route path="/admin"  exact={true} render={() => <Admin />} />
+        </Switch>
     </BrowserRouter>
   );
 }
