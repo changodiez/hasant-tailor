@@ -20,8 +20,6 @@ const ProductsContainer = (props) => {
         });
   }, [searchValue]);
 
-  console.log(productsData)
-
   return (
     <div>
       <div className="products-container">

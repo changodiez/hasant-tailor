@@ -19,6 +19,13 @@ const Login = (props) => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
+    if (email === "admin@admin.com" && password === "admin"){
+      alert("Welcome Admin")
+      setTimeout(() => {
+        window.location.href = "/admin";
+      }, 1000);
+    }
+
     try {
       const body = { email, password };
       const response = await fetch("/auth/login", {
