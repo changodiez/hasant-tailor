@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
 
 const Login = (props) => {
   const [inputs, setInputs] = useState({
@@ -16,12 +17,14 @@ const Login = (props) => {
     setInputs({ ...inputs, [e.target.name]: e.target.value });
   };
 
+  const [isAdmin, setIsAdmin ] = useState(false)
+
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    if (email === "admin@admin.com" && password === "admin") {
+    if (email === "admin" && password === "admin") {
       alert("Welcome Admin");
-      window.location.href = "/owner";
+      setIsAdmin(true)
     } else {
       try {
         const body = { email, password };
@@ -64,6 +67,7 @@ const Login = (props) => {
     <div>
       <div className="modal">
         <div className="Login-modal">
+          {isAdmin ? <Redirect to="/owner"/> : null}
           <button id="LoginbuttonClose" onClick={CloseLogin}>
             X
           </button>

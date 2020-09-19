@@ -9,7 +9,7 @@ const ProductsCategory = (props) => {
 
   return (
     <Fragment>
-      <Link to={`/products`}>
+      <Link to={`/market`}>
        
         <div id="mini-banner">
         <button className="chose-category-button" onClick={(e) => choseCategory("")}>
@@ -19,7 +19,7 @@ const ProductsCategory = (props) => {
         
       </Link>
       <div className="products-category">
-        <Link to={`/products`}>
+        <Link to={`/market`}>
           <div className="img-category">
             <button className="chose-category-button" onClick={(e) => choseCategory("men")}>
               <img src={Men} alt="" />
@@ -30,7 +30,7 @@ const ProductsCategory = (props) => {
           </div>
         </Link>
 
-        <Link to={`/products`}>
+        <Link to={`/market`}>
           <div className="img-category">
             <button className="chose-category-button" onClick={(e) => choseCategory("women")}>
               <img src={Women} alt="" />

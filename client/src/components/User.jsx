@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import ProductsContainer from "./ProductsContainer";
-import ProductDetail from "./ProductDetail";
-import Footer from "./Footer";
-import Banner from "./Banner";
-import ProductsCategory from "./ProductsCategory";
-import NavBar from "./NavBar";
+import ProductsContainer from "./components/ProductsContainer";
+import ProductDetail from "./components/ProductDetail";
+import Footer from "./components/Footer";
+import Banner from "./components/Banner";
+import ProductsCategory from "./components/ProductsCategory";
+import NavBar from "./components/NavBar";
 import Admin from "./Admin/Admin";
 
 const User = () => {
