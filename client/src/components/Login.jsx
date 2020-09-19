@@ -25,6 +25,10 @@ const Login = (props) => {
     if (email === "admin" && password === "admin") {
       alert("Welcome Admin");
       setIsAdmin(true)
+      setTimeout(() => {
+        CloseLogin()
+      }, 400);
+      
     } else {
       try {
         const body = { email, password };

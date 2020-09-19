@@ -9,7 +9,7 @@ const NavBar = () => {
         <div className="nav-container">
           <div className="logo" style={{color:"white"}}>Admin Tools</div>
           <ul>
-            <li><Link to="/market"><button>Go to the shop</button></Link></li>
+            <li><Link to="/"><button>Go to the shop</button></Link></li>
             <li>Products</li>
             <li>Customers</li>
           </ul>

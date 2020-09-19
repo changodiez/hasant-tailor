@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(morgan("tiny"));
 
-
+app.use(express.static(path.join(__dirname, "client/build")))
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "client/build")))
@@ -34,5 +34,9 @@ app.use("/auth", require("./routes/auth"));
 /*ADMIN TOOLS*/
 
 app.use("/admin", require("./routes/admin"));
+
+// app.get("*", (req, res)=> {
+//   res.sendFile(path.join(__dirname, "client/build/index.html"))
+// })
 
 app.listen(port, () => console.log(`Listening at http://localhost:${port}`));

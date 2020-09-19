@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from "react-router-dom";
 
 import ProductsContainer from "./components/ProductsContainer";
 import ProductDetail from "./components/ProductDetail";
@@ -8,7 +13,7 @@ import Banner from "./components/Banner";
 import ProductsCategory from "./components/ProductsCategory";
 import NavBar from "./components/NavBar";
 import Admin from "./components/Admin/Admin";
-import "./App.css"
+import "./App.css";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -45,9 +50,8 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
-      <Route path="/owner" exact={true} render={() => <Admin />} />
-
+    <Router>
+      <Route path="/owner" exact={true} component={Admin} />
       <NavBar
         auth={isAuthenticated}
         setAuth={setAuth}
@@ -65,18 +69,19 @@ function App() {
             </div>
           )}
         />
-        <Route path="/market/:id" render={() => <ProductDetail />} />
+        <Route path="/products/:id" render={() => <ProductDetail />} />
+
         <Route
-          path="/market"
+          path="/products"
+          exact={true}
           render={(props) => (
             <ProductsContainer {...props} searchValue={search} />
           )}
         />
       </Switch>
       <Footer />
-    </BrowserRouter>
+    </Router>
   );
-};
-
+}
 
 export default App;

@@ -28,7 +28,7 @@ const SearchBar = (props) => {
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
             ></input>
-            <Link to={`/market`}>
+            <Link to={`/products`}>
               <button
                 type="submit"
                 onClick={searchOnClick}
