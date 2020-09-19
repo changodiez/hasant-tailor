@@ -18,8 +18,7 @@ const ShowProducts = (props) => {
             method: "DELETE",
           }
         );
-        const res = await response.json();
-        console.log(res)
+        console.log(response)
       } catch (error) {
         console.error(error);
       }
