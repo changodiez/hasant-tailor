@@ -10,8 +10,8 @@ const Admin = () => {
     <BrowserRouter>
       <NavBar />
       <Switch>
-        <Route path="/admin" exact render={() => <ProductsAdmin />} />
-        <Route path="/admin/:id" exact render={() => <UpdateProduct />} />
+        <Route path="/owner" exact render={() => <ProductsAdmin />} />
+        <Route path="/owner/:id" exact render={() => <UpdateProduct />} />
       </Switch>
     </BrowserRouter>
   );

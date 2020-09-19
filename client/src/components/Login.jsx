@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-
 const Login = (props) => {
   const [inputs, setInputs] = useState({
     email: "",
@@ -11,8 +10,6 @@ const Login = (props) => {
 
   const setAuth = props.setAuth;
 
-
-
   //Managing login
   const { email, password, loginError, loginSuccess } = inputs;
   const onChange = (e) => {
@@ -22,17 +19,10 @@ const Login = (props) => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    if (email === "admin@admin.com" && password === "admin"){
-      alert("Welcome Admin")
-
-      
-      setTimeout(() => {
-        window.location.href = "/admin";
-      }, 1000);
-     
-
+    if (email === "admin@admin.com" && password === "admin") {
+      alert("Welcome Admin");
+      window.location.href = "/owner";
     } else {
-
       try {
         const body = { email, password };
         const response = await fetch("/auth/login", {
@@ -40,9 +30,9 @@ const Login = (props) => {
           headers: { "Content-type": "application/json" },
           body: JSON.stringify(body),
         });
-  
+
         const parseRes = await response.json();
-  
+
         if (response.ok) {
           setInputs({
             ...inputs,
@@ -61,8 +51,6 @@ const Login = (props) => {
         console.error(error.message);
       }
     }
-
-    
   };
   const LoginOpen = props.LoginOpen;
 
@@ -72,10 +60,9 @@ const Login = (props) => {
     Close(!LoginOpen);
   };
 
-
   return (
     <div>
-      <div className="modal" >
+      <div className="modal">
         <div className="Login-modal">
           <button id="LoginbuttonClose" onClick={CloseLogin}>
             X

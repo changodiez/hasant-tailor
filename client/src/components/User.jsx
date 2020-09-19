@@ -45,7 +45,7 @@ const User = () => {
 
   return (
     <BrowserRouter>
-      <Route path="/admin" exact={true} render={() => <Admin />} />
+      <Route path="/owner" exact={true} render={() => <Admin />} />
 
       <NavBar
         auth={isAuthenticated}
@@ -64,9 +64,9 @@ const User = () => {
             </div>
           )}
         />
-        <Route path="/product/:id" render={() => <ProductDetail />} />
+        <Route path="/market/:id" render={() => <ProductDetail />} />
         <Route
-          path="/products"
+          path="/market"
           render={(props) => (
             <ProductsContainer {...props} searchValue={search} />
           )}
